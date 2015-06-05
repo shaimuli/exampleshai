@@ -27,13 +27,13 @@
     },
     "installed_plugins": {
         "org.apache.cordova.dialogs": {
-            "PACKAGE_NAME": "io.cordova.myappb89f407925bf47c3a7f0a3c60cff5980"
+            "PACKAGE_NAME": "io.cordova.myapp48a88c9992b747788a59596078ed8ccf"
         },
         "org.apache.cordova.inappbrowser": {
-            "PACKAGE_NAME": "io.cordova.myappb89f407925bf47c3a7f0a3c60cff5980"
+            "PACKAGE_NAME": "io.cordova.myapp48a88c9992b747788a59596078ed8ccf"
         },
         "org.apache.cordova.statusbar": {
-            "PACKAGE_NAME": "io.cordova.myappb89f407925bf47c3a7f0a3c60cff5980"
+            "PACKAGE_NAME": "io.cordova.myapp48a88c9992b747788a59596078ed8ccf"
         }
     },
     "dependent_plugins": {}
