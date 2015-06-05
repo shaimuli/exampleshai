@@ -8,29 +8,22 @@
     document.addEventListener( 'deviceready', onDeviceReady.bind( this ), false );
 
     function onDeviceReady() {
-        // Handle the Cordova pause and resume events
+        alert("deviceready");
         var ref = window.open('http://www.jetcopy.co.il/', '_self', 'location=yes');
-        //document.addEventListener( 'pause', onPause.bind( this ), false );
-        //document.addEventListener( 'resume', onResume.bind( this ), false );
-        document.addEventListener("backbutton", function (e) {
-            if (document.getElementById('#homepage')) {
-                e.preventDefault();
-                navigator.app.exitApp();
-            }
-            else {
-                navigator.app.backHistory()
-            }
-        }, false);
-
-        // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
+        ref.addEventListener("backbutton", onBackKeyDown, false);
     };
+    function onBackKeyDown(e) {
+        e.preventDefault();
+        navigator.notification.confirm("אתה בטוח שברצונך לצאת?", onConfirm, "Confirmation", "Yes,No");
+        // Prompt the user with the choice
+    }
 
-    function onPause() {
-        
-        // TODO: This application has been suspended. Save application state here.
-    };
+    function onConfirm(button) {
+        if (button == 2) {//If User selected No, then we just do nothing
+            return;
+        } else {
+            navigator.app.exitApp();// Otherwise we quit the app.
+        }
+    }
 
-    function onResume() {
-        // TODO: This application has been reactivated. Restore application state here.
-    };
 } )();
